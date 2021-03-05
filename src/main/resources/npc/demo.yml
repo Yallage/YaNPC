@@ -1,0 +1,40 @@
+# 这个名字作为唯一识别标识 不能重复
+key: 'demo'
+
+# npc 类型
+# MULTIENTITES_MAIN
+# MULTIENTITES_ADDITION
+# ENTITY
+type: 'ENTITY'
+
+# 显示的名字
+display: 'DEMO Entity'
+
+# 动画效果描述文件
+animation: 'demo-animation.animation'
+
+# 子组件 填入唯一标识
+addition:
+  - 'demo'
+
+# AI 控制器
+ai: './demo/demo.groovy'
+
+# 基础坐标
+location:
+  'world': 'ZC'
+  'x': 0
+  'y': 0
+  'z': 0
+
+# 懒加载 只是预先加载到内存中 但不会立刻放置
+lazy-load: true
+
+# 戴在盔甲架头上的物品
+item: PAPER
+
+# 物品的CustomModelData
+custommodeldata: 1
+
+# 物品所对应的模型贴图路径
+item-model: 'assess/texture/paper.json'

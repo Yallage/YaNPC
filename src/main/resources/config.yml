@@ -1,0 +1,13 @@
+# 全局懒加载模式 只有指令召唤的时候才会加载NPC
+lazy-loader: false
+
+# Mysql数据库
+mysql-enable: false
+mysql-ip: "0.0.0.0"
+mysql-uaername: "root"
+mysql-password: "123456"
+
+# 自动保存数据
+auto-save: true
+# 自动保存时间
+auto-save-time: 100

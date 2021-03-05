@@ -1,0 +1,6 @@
+name: YaNPC
+version: ${project.version}
+main: com.nanokylin.mc.yanpc.YaNPC
+api-version: 1.13
+authors: [Hanbings]
+description: YaNPC -- NPC Plugin
