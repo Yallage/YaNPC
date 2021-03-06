@@ -20,7 +20,6 @@ import java.util.*;
  * 但仅仅如此 将配置文件加载然后加载到Controller内
  * This class focuses on loading configuration files
  * But it’s just that. Load the configuration file and then load it into the Controller package.
- * TODO: 修改返回MAP对象回YaNPC
  *
  * @author Hanbings
  * @version 1.1 fast update

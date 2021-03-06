@@ -6,6 +6,7 @@ import com.nanokylin.mc.yanpc.controller.interfaces.IMultiEntityNPCLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO: 转换坐标
 public class MultiEntityNPCLoader implements IMultiEntityNPCLoader {
     NPC npc;
     List<NPC> additions = new ArrayList<>();
@@ -13,6 +14,7 @@ public class MultiEntityNPCLoader implements IMultiEntityNPCLoader {
     @Override
     public void addAdditionNPC(NPC npc) {
         additions.add(npc);
+        // 转换坐标TODO
     }
 
     @Override

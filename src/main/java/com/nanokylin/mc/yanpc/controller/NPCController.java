@@ -23,6 +23,7 @@ public class NPCController {
     Map<String, NPC> multiEntityNPCAddition = new HashMap<>();
     Map<String, EntityNPCLoader> entityNPCLoaderMap = new HashMap<>();
     Map<String, MultiEntityNPCLoader> multiEntityNPCLoaderMap = new HashMap<>();
+    EntityNPCTaskRunnable taskRunnable = new EntityNPCTaskRunnable();
 
     /**
      * 此方法将承担大部分关于分配资源的工作
@@ -66,9 +67,10 @@ public class NPCController {
             }
             multiEntityNPCLoaderMap.put(entry.getKey(), multiEntityNPCLoader);
         }
-
-        // 临时的任务列表
-        EntityNPCTaskRunnable taskRunnable = new EntityNPCTaskRunnable(entityNPCLoaderMap);
+        // 加载后放入实现队列 放置到游戏中
+        for (Map.Entry<String, EntityNPCLoader> entry : entityNPCLoaderMap.entrySet()) {
+            taskRunnable.addEntityLoaderTask(entry.getValue());
+        }
         taskRunnable.start();
     }
 }

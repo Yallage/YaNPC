@@ -3,7 +3,6 @@ package com.nanokylin.mc.yanpc.controller.interfaces;
 import com.nanokylin.mc.yanpc.common.model.NPC;
 
 import java.util.List;
-import java.util.Map;
 
 /**
  * 继承于基础的NPCLoader

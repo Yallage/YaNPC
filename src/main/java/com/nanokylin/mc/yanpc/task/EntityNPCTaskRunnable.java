@@ -2,11 +2,9 @@ package com.nanokylin.mc.yanpc.task;
 
 import com.nanokylin.mc.yanpc.common.model.NPC;
 import com.nanokylin.mc.yanpc.controller.EntityNPCLoader;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.ArmorStand;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -14,21 +12,32 @@ import java.util.Objects;
  * 暂用于加载NPC到具体的地图中
  */
 public class EntityNPCTaskRunnable extends Thread {
-    Map<String, EntityNPCLoader> entityNPCLoaderMap;
+    List<EntityNPCLoader> entityNPCLoaderTasks;
 
-    public EntityNPCTaskRunnable(Map<String, EntityNPCLoader> entityNPCLoaderMap) {
-        this.entityNPCLoaderMap = entityNPCLoaderMap;
+    public EntityNPCTaskRunnable() {
     }
 
+    public void addEntityLoaderTask(EntityNPCLoader entityNPCLoader) {
+        entityNPCLoaderTasks.add(entityNPCLoader);
+    }
+
+    public EntityNPCTaskRunnable(List<EntityNPCLoader> entityNPCLoaderTasks) {
+        this.entityNPCLoaderTasks = entityNPCLoaderTasks;
+    }
+
+    @SuppressWarnings("ALL")
     @Override
     public void run() {
-        for (Map.Entry<String, EntityNPCLoader> entry : entityNPCLoaderMap.entrySet()) {
-            NPC npc = entry.getValue().getNPC();
+        // 大家都喜欢的rbq
+        NPC npc = new NPC();
+        for (int i = 0; i < entityNPCLoaderTasks.size(); i++) {
+            npc = entityNPCLoaderTasks.get(i).getNPC();
             ArmorStand stand = Objects.requireNonNull(npc.getLocation().getWorld()).spawn(npc.getLocation(), ArmorStand.class);
             stand.setCustomName(npc.getDisplay());
             stand.setCustomNameVisible(true);
             stand.setHelmet(npc.getItemStack());
             stand.setVisible(true);
+            entityNPCLoaderTasks.remove(i);
         }
     }
 }
