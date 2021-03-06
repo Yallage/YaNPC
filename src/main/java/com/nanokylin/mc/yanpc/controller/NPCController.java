@@ -69,5 +69,6 @@ public class NPCController {
 
         // 临时的任务列表
         EntityNPCTaskRunnable taskRunnable = new EntityNPCTaskRunnable(entityNPCLoaderMap);
+        taskRunnable.start();
     }
 }

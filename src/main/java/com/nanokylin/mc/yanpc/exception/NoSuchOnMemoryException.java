@@ -1,6 +1,6 @@
 package com.nanokylin.mc.yanpc.exception;
 
-public class NoSuchOnMemoryException extends Exception{
+public class NoSuchOnMemoryException extends Exception {
     public NoSuchOnMemoryException() {
         super();
     }
