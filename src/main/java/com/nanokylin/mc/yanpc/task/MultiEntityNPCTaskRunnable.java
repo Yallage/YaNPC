@@ -2,17 +2,15 @@ package com.nanokylin.mc.yanpc.task;
 
 import com.nanokylin.mc.yanpc.common.model.NPC;
 import com.nanokylin.mc.yanpc.controller.MultiEntityNPCLoader;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.ArmorStand;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
-public class MultiEntityNPCTaskRunnable extends Thread {
-    List<MultiEntityNPCLoader> multiEntityNPCLoaderTasks;
+public class MultiEntityNPCTaskRunnable extends BukkitRunnable {
+    List<MultiEntityNPCLoader> multiEntityNPCLoaderTasks = new ArrayList<>();
 
     public MultiEntityNPCTaskRunnable(MultiEntityNPCLoader multiEntityNPCLoader) {
         this.multiEntityNPCLoaderTasks.add(multiEntityNPCLoader);

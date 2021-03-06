@@ -3,7 +3,9 @@ package com.nanokylin.mc.yanpc.task;
 import com.nanokylin.mc.yanpc.common.model.NPC;
 import com.nanokylin.mc.yanpc.controller.EntityNPCLoader;
 import org.bukkit.entity.ArmorStand;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -11,8 +13,8 @@ import java.util.Objects;
  * 临时的设计
  * 暂用于加载NPC到具体的地图中
  */
-public class EntityNPCTaskRunnable extends Thread {
-    List<EntityNPCLoader> entityNPCLoaderTasks;
+public class EntityNPCTaskRunnable extends BukkitRunnable {
+    List<EntityNPCLoader> entityNPCLoaderTasks = new ArrayList<>();
 
     public EntityNPCTaskRunnable() {
     }

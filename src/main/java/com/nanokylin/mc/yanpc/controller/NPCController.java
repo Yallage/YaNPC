@@ -71,6 +71,6 @@ public class NPCController {
         for (Map.Entry<String, EntityNPCLoader> entry : entityNPCLoaderMap.entrySet()) {
             taskRunnable.addEntityLoaderTask(entry.getValue());
         }
-        taskRunnable.start();
+        taskRunnable.run();
     }
 }
