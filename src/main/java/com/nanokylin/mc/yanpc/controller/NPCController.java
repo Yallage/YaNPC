@@ -2,7 +2,7 @@ package com.nanokylin.mc.yanpc.controller;
 
 import com.nanokylin.mc.yanpc.common.content.NPCType;
 import com.nanokylin.mc.yanpc.common.model.NPC;
-import com.nanokylin.mc.yanpc.task.EntityNPCTaskRunnable;
+import com.nanokylin.mc.yanpc.task.EntityNPCTask;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
@@ -23,7 +23,7 @@ public class NPCController {
     Map<String, NPC> multiEntityNPCAddition = new HashMap<>();
     Map<String, EntityNPCLoader> entityNPCLoaderMap = new HashMap<>();
     Map<String, MultiEntityNPCLoader> multiEntityNPCLoaderMap = new HashMap<>();
-    EntityNPCTaskRunnable taskRunnable = new EntityNPCTaskRunnable();
+    EntityNPCTask taskRunnable = new EntityNPCTask();
 
     /**
      * 此方法将承担大部分关于分配资源的工作

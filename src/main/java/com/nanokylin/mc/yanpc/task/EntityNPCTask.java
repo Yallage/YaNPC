@@ -13,17 +13,17 @@ import java.util.Objects;
  * 临时的设计
  * 暂用于加载NPC到具体的地图中
  */
-public class EntityNPCTaskRunnable extends BukkitRunnable {
+public class EntityNPCTask extends BukkitRunnable {
     List<EntityNPCLoader> entityNPCLoaderTasks = new ArrayList<>();
 
-    public EntityNPCTaskRunnable() {
+    public EntityNPCTask() {
     }
 
     public void addEntityLoaderTask(EntityNPCLoader entityNPCLoader) {
         entityNPCLoaderTasks.add(entityNPCLoader);
     }
 
-    public EntityNPCTaskRunnable(List<EntityNPCLoader> entityNPCLoaderTasks) {
+    public EntityNPCTask(List<EntityNPCLoader> entityNPCLoaderTasks) {
         this.entityNPCLoaderTasks = entityNPCLoaderTasks;
     }
 

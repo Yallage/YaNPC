@@ -9,14 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class MultiEntityNPCTaskRunnable extends BukkitRunnable {
+public class MultiEntityNPCTask extends BukkitRunnable {
     List<MultiEntityNPCLoader> multiEntityNPCLoaderTasks = new ArrayList<>();
 
-    public MultiEntityNPCTaskRunnable(MultiEntityNPCLoader multiEntityNPCLoader) {
+    public MultiEntityNPCTask(MultiEntityNPCLoader multiEntityNPCLoader) {
         this.multiEntityNPCLoaderTasks.add(multiEntityNPCLoader);
     }
 
-    public MultiEntityNPCTaskRunnable(List<MultiEntityNPCLoader> multiEntityNPCLoaderTasks) {
+    public MultiEntityNPCTask(List<MultiEntityNPCLoader> multiEntityNPCLoaderTasks) {
         this.multiEntityNPCLoaderTasks = multiEntityNPCLoaderTasks;
     }
 
