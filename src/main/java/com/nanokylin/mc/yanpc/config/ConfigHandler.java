@@ -78,6 +78,7 @@ public class ConfigHandler {
             ItemStack itemStack = new ItemStack(Material.valueOf(Objects.requireNonNull(configuration.getString("item")).toUpperCase(Locale.ROOT)));
             npc.setItemStack(itemStack);
             npc.setCustomModelData(configuration.getInt("custommodeldata"));
+            npc.setModel(configuration.getString("item-model"));
             config.add(npc);
         }
         return config;
